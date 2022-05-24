@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+@import 'null.css';
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  /* display: flex; - робить
+  з  <header <main <footer flex елементи
+  flex-direction: column; робить елементи в горизонтальні колонки */
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  /* flex-grow: 1; намагаєся займати весь простір і розкидує header і footer по краях, десь те саме робить і  flex: 1 1 auto;. 
+  footer буде в кінці сторінки */
+  flex: 1 1 auto;
+  /* flex-grow: 1; */
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+  color: #4b4b4b;
+  background: #f5f5f5;
+}
+[class*='__conteiner'] {
+  /* для того щоб не враховувати padding: 0px 15px; він плюсує до ширини блоку, він стає на 30рх більше */
+  box-sizing: content-box;
+  max-width: 1020px;
+  margin: 0 auto;
+  /* відступи безпеки для адаптива, щоб невеликі відсані були по бокам при адаптиві*/
+  padding: 0px 15px;
+}
+.our-promise {
+  /* відстань у верх і вниз 50px
+  для блоку*/
+  padding: 50px 0px;
+}
+/* ще один клас, елемент our-promise__items, для нього можна задавати margin: */
+.our-promise__block-header {
+  margin: 0px 0px 68px 0px;
+}
+.block-header__subtitle {
+  background: url('../img/overline_mark.svg') 0 -2px no-repeat;
+  font-weight: 700;
+  font-size: 12px;
+  /* line-height: потрібно показувати у частках. line-height: 24px;ділити на font-size: 12px; дорівнює 2.
+  line-height: 2; дорівнює
+  line-height: 200%;*/
+  line-height: 2;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #5d62b5;
+  padding: 0px 0px 0px 33px;
+}
+/* .block-header__subtitl:not(:last-child)
+зірочка непрацює правильно */
+/* якщо небуде block-header__title відступа небуде */
+.block-header__subtitle:not(:last-child) {
+  margin: 0px 0px 33px 0px;
+}
+.our-promise__items {
+  /* флекс модуль */
+  display: flex;
+  flex-wrap: wrap;
+  /* горизонтальні відстані між флекс елементами */
+  row-gap: 24px;
+  margin: 0px -12px;
+  /* розкидає елементи на всю ширину блоку */
+  /* justify-content: space-between; */
+}
+.our-promise__item {
+  /* флекс елемент поділ на 3 рівних частини ширини простору по горизонталі.
+  Перша одиниця дозволяє збільшуватись флекс елементам,
+  друга одиниця дозволяє зменшуватись флекс елементам в межах 33.333% */
+  flex: 1 1 33.333%;
+  /* до якої мінімальної ширини буде зменшуватись флекс елемент */
+  min-width: 260px;
+  /* робить відстані між елементами */
+  padding: 0px 12px;
+}
+.item-our-promise {
+  /* флекс модуль поділ 
+   item-our-promise__image
+   item-our-promise__content
+   на дві колонки */
+  display: flex;
+  /* зображення приклеюється до верху */
+  align-items: flex-start;
+  /* вертикальні відстань між флекс елементами 
+  item-our-promise__image та
+  item-our-promise__content
+  якщо image видалити то відступа небуде */
+  column-gap: 23px;
+}
+.item-our-promise__image {
+  /* 0 забороняє збільшуватись зображеню 
+   0 забороняє зменшуватись зображенню
+   63px конкретний розмір*/
+  flex: 0 0 63px;
+}
+/* .item-our-promise__content {
+} */
+.block-header__title {
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 1.17;
+  color: #000000;
+}
+.item-title {
+  font-weight: 900;
+  font-size: 19px;
+  line-height: 1.37;
+  color: #f2726f;
+}
+.item-our-promise__title:not(:last-child) {
+  /* якщо небуде тексту у 
+  .item-our-promise__text то у
+   .item-our-promise__title 
+   небуде висячого відступу */
+  margin: 0px 0px 20px 0px;
+}
+/* .item-our-promise__text {
+  max-width: 238px; 
+  padding: 0px 0px 116px 0px; 
+}  */
+/* -----------------------
+        інший блок
+__________________________ */
+.our-services__block-header {
+  margin: 0px 0px 78px 0px;
+}
+
+/* .block-header__subtitle_white {
+  color: rgb(255, 255, 255);
+}
+.block-header__title_white {
+  max-width: 420px;
+  color: rgb(255, 255, 255);
+} */
+.our-services {
+  padding: 100px 0px 112px 0px;
+}
+.our-services__conteiner {
+  /* стає флекс контейнером і все, що всередені перетворюються на флекс елементи */
+  display: flex;
+  /* перетворює вертикальні колонки на горизонтальні */
+  flex-direction: column;
+}
+.our-services {
+  overflow: hidden;
+  padding: 100px 0px 112px 0px;
+  background: url(../img/services/blob_3.svg) right -490px no-repeat;
+  /* top: 0px;
+  right: 0px; */
+  /* зміщення плями */
+  /* transform: translate(0px, 0px); */
+  /* 1020рх ширина контейнера ділити на 695рх ширина обєкту дорівнює 0.68
+  695 ділити на 1020 = 0.68 */
+  /* width: 1322.33px;
+  height: 1497.39px; */
+}
+.our-services__items {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 24px;
+  margin: 0px -12px;
+}
+/* варіант зробити відстань до кнопки, якщо кнопку забрати відстань зникне */
+/* .our-services__items:not(:last-child) {
+  margin: 0px 0px 66px 0px;
+} */
+.our-services__item {
+  padding: 0px 12px;
+  flex: 1 1 33.333%;
+  /* до 300px зменшується далі переходить в інший ряд  */
+  min-width: 300px;
+}
+.item-our-services {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 50px 44px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  /* картки завжди будуть займати однаковоу висоту з тою яка займає */
+  height: 100%;
+}
+.item-our-services__icon {
+  /* ширина іконки */
+  flex: 0 0 63 px;
+  /* висота іконки */
+  width: 63px;
+  display: flex;
+  /* розміщення по центру якщо іконка вужча  */
+  justify-content: center;
+  /* якщо іконка буде менша вона все одно буде внизу */
+  align-items: flex-end;
+}
+.item-our-services__icon img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.item-our-services__icon:not(:last-child) {
+  margin: 0px 0px 33px 0px;
+}
+/* .item-our-services__title {
+} */
+.item-our-services__title:not(:last-child) {
+  margin: 0px 0px 20px 0px;
+}
+.item-our-services__text {
+  /* ми дозволяємо збильшуватись тексту і він займає весь можливий простір і елемент під ним опускаєтьсяя до самого низу */
+  flex: 1 1 auto;
+}
+.our-services__button {
+  /* розміщує флекс елемент кнопку по центру */
+  align-self: center;
+  /* display: inline-flex; */
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.15px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  background: #f2726f;
+  border-radius: 8px;
+  /* min-height: 48px; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  text-align: center;
+  padding: 12px 25px;
+  margin: 66px 0px 0px 0px;
+}
+.item-our-services__text:not(:last-child) {
+  margin: 0px 0px 20px 0px;
+}
+.item-our-services__link {
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1.37;
+  letter-spacing: 0.15px;
+  color: #f2726f;
+}
+/* -----------------------
+------------------------ */
+.our-impact {
+  /* фон для всього блоку */
+  background: #29c3be;
+  position: relative;
+  /* падінг від найвищого і найнищого обєкту, вверх і вниз */
+  padding: 20px 0px 212px 0px;
+}
+.our-impact__conteiner::before {
+  content: '';
+  background: url(../img/impact/blob_2.svg) 0 0 / 75% no-repeat;
+  position: absolute;
+  top: 0px;
+  right: 50%;
+  /* зміщення плями */
+  transform: translate(90%, 0px);
+  /* 1020рх ширина контейнера ділити на 695рх ширина обєкту дорівнює 0.68
+  695 ділити на 1020 = 0.68 */
+  width: 68%;
+  height: 308px;
+}
+.our-impact__body {
+  display: flex;
+  /* флекс елементи прилипають до низу */
+  margin: 0px -15px;
+}
+.our-impact__body:not(:last-child) {
+  /* margin-bottom: зпаисується щоб не перезаписувавалось верхній  margin: 0px -15px;*/
+  margin-bottom: 80px;
+}
+.our-impact__content {
+  /* щоб зображення було зверху */
+  align-self: flex-end;
+  padding: 0px 15px;
+  flex: 0 1 50%;
+  z-index: 100;
+}
+.our-impact__image {
+  flex: 0 1 50%;
+  /* зображення піднімається вгору
+  80 ділити на 1050 і множити на 100= 7.61% */
+  margin: -7.61% 0px 0px 0px;
+  z-index: 2;
+  padding: 0px 15px;
+}
+.our-impact__image img {
+  border-radius: 40px;
+  max-width: 100%;
+}
+/* .block-header {
+} */
+.our-impact__block-header {
+  max-width: 414px;
+}
+.block-header__subtitle_white {
+  background: url(../img/impact/overline_mark.svg) 0 0 no-repeat;
+  color: rgb(255, 255, 255);
+}
+.block-header__title_white {
+  color: rgb(255, 255, 255);
+}
+/* .our-impact__block-header {
+  margin: 0px 0px 79px 0px; 
+} */
+.our-impact__items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 0px -12px;
+  row-gap: 24px;
+}
+.our-impact__item {
+  padding: 0px 12px;
+  flex: 0 1 25%;
+}
+.item-our-impact {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 11px;
+}
+.item-our-impact__icon {
+  flex: 0 1 76px;
+}
+/* .item-our-impact__body {
+} */
+.item-our-impact__value {
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 1.17;
+  color: rgb(255, 255, 255);
+}
+.item-our-impact__value:not(:last-child) {
+  margin: 0px 0px 3px 0px;
+}
+.item-our-impact__text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.15px;
+  color: #5d62b5;
+}
+/* ---------------------
+------------------------- */
+.our-customers {
+  padding: 120px 0px 130px 0px;
+}
+/* флекс контейнер */
+.our-customers__items {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 24px;
+  margin: 0px -12px;
+}
+/* флекс елемент */
+.our-customers__item {
+  flex: 1 1 33.333%;
+  padding: 0px 12px;
+  min-width: 316px;
+}
+/* контент */
+.item-our-customers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 20px;
+  height: 100%;
+  padding: 40px 43px 50px 43px;
+}
+/* .item-our-customers__text {
+} */
+.item-our-customers__text:not(:last-child) {
+  margin-bottom: 18px;
+}
+.item-our-customers__footer {
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+}
+/* .item-our-customers__icon {
+  flex: 0 0 48px; 
+} */
+.item-our-customers__icon img {
+  border-radius: 50%;
+  max-width: 48px;
+  height: 100%;
+  padding: 0px 17px 0px 0px;
+}
+.item-our-customers__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.15px;
+  color: #f2726f;
+}
+/* ------------------------------- */
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson_17</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__conteiner">
+          <div class="header__top top-header"
+            <div class="header__logo logo">
+              <img src="img/header/logo.svg" alt="logo" />
+            </div>
+            <div class="header__contact">
+              <div class="header__time cart">
+                <img
+                  class="cart__icon"
+                  src="img/header/access_time_24px.svg"
+                  alt="time"
+                />
+                <div class="cart__content">
+                  <div class="cart__title">BOARDING HOURS</div>
+                  <div class="cart__info">Mon - Sat: 7:00 am - 6:00 pm</div>
+                </div>
+              </div>
+              <div class="header__call cart">
+				  <img
+                  class="cart__icon"
+                  src="img/header/phone_24px.svg"
+                  alt="phone"
+                />
+                <div class="cart__content">
+                  <div class="cart__title">CALL US</div>
+                  <div class="cart__info">(555) Pup-Cares</div>
+                </div>
+			  </div>
+            </div>
+            <div class="header__button button">Make an Appointment</div>
+          </div>
+          <div class="header__body">
+      <nav class="header__menu menu">
+				<ul class="menu__items">
+				   <li class="menu__item">
+					   <a class="menu__link" href="#">Services</a>
+				   </li>
+				   <li class="menu__item">
+					   <a class="menu__link" href="#">Specials</a>
+				   </li>
+				   <li class="menu__item">
+					   <a class="menu__link" href="#">Facilities</a>
+				   </li>
+				   <li class="menu__item">
+					   <a class="menu__link" href="#">Reviews</a>
+				   </li>
+				   <li class="menu__item">
+					   <a class="menu__link" href="#">Shop</a>
+				   </li>
+				   <li class="menu__item">
+					   <a class="menu__link" href="#">About</a>
+				   </li>
+				</ul>
+			</nav>
+            <div class="icons"></div>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="main-screen"></section>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>
